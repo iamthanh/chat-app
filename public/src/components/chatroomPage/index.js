@@ -16,17 +16,16 @@ export default function ChatroomPage(props) {
     const fetchAllRooms = async () => {
       let rooms = await Axios.get('http://localhost:8080/api/rooms');
       if (rooms && rooms.status === 200) {
-        setChatRooms(rooms.data);
+        // Setting the current chat room to be the first one in the list
+        await setCurrentRoom(rooms.data[0])        
+        await setChatRooms(rooms.data);
+        await setIsLoading(false);
       }
-
-      // Setting the current chat room to be the first one in the list
-      await setCurrentRoom(rooms.data[0])
-      await setIsLoading(false);
     }
     if (isLoading) {
       fetchAllRooms();
     }
-  }, [isLoading])
+  }, [])
 
   const fetchMessagesForCurrentRoom = async () => {
     setIsLoading(true);
@@ -47,6 +46,7 @@ export default function ChatroomPage(props) {
       <UserInfo
         userName={props.userName}
         activeStarted={Date.now()}
+        currentRoom={currentRoom}
         setCurrentRoom={setCurrentRoom}
         chatRooms={chatRooms}
       />

@@ -18,7 +18,7 @@ export default function UserInfo(props) {
       <div className='active-time-elapsed'>Online for {}</div>
       <div className='rooms-list-container'>
         {(props.chatRooms ? props.chatRooms : []).map((data, key) => 
-          <div key={data.id} className='room' onClick={()=>changeRoom(data)}>{data.name}</div>
+          <div key={data.id} className={'room '+(data.id === props.currentRoom.id ? 'selected':'')} onClick={()=>changeRoom(data)}>{data.name}</div>
         )}
       </div>
     </div>
