@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import './index.scss';
 
 export default function LoginPage(props) {
 
   const [inputUserName, setInputUserName] = useState('');
-  
+
   const joinChat = (username) => props.setUserName(username)
 
   // Handles the request when someone clicks on the join chatroom
   const onSubmitHandler = (e) => {
     // Some checks before joining
     if (inputUserName) {
-      joinChat(inputUserName);  
+      joinChat(inputUserName);
     }
   }
 
@@ -19,12 +20,12 @@ export default function LoginPage(props) {
 
   return (
     <div className="login-page-container">
-      <div className="input-container">
-        <form onSubmit={(e)=>onSubmitHandler(e)}>
-          <input type='text' onChange={(e)=>userNameInputHandler(e.target.value)}/>
+      <form onSubmit={(e) => onSubmitHandler(e)}>
+        <div className="input-container">
+          <input type='text' onChange={(e) => userNameInputHandler(e.target.value)} placeholder='Type your username...' />
           <button>Join the DoorDash Chat!</button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 }

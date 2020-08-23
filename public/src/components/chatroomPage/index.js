@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import UserInfo from './userInfo';
 import ChatWindow from './chatWindow';
 import Axios from 'axios';
+import './index.scss';
 
 export default function ChatroomPage(props) {
 
   // We'll use the activeStarted to track how long the user has been active
   const [isLoading, setIsLoading] = useState(true);
-  const [activeStarted, setActiceStarted] = useState(null);
   const [currentRoom, setCurrentRoom] = useState(null);
   const [chatRooms, setChatRooms] = useState([]);
   const [messagesForCurrentRoom, setMessagesForCurrentRoom] = useState([]);
@@ -26,10 +26,10 @@ export default function ChatroomPage(props) {
     if (isLoading) {
       fetchAllRooms();
     }
-    if (!activeStarted) setActiceStarted(Date.now());
-  }, [])
+  }, [isLoading])
 
   const fetchMessagesForCurrentRoom = async () => {
+    setIsLoading(true);
     if (currentRoom !== null) {
       let _messages = await Axios.get('http://localhost:8080/api/rooms/' + currentRoom.id + '/messages');
       if (_messages && _messages.status === 200) {
@@ -46,7 +46,7 @@ export default function ChatroomPage(props) {
     <div className="chatroom-page-container">
       <UserInfo
         userName={props.userName}
-        activeStarted={activeStarted}
+        activeStarted={Date.now()}
         setCurrentRoom={setCurrentRoom}
         chatRooms={chatRooms}
       />

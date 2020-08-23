@@ -1,0 +1,32 @@
+.user-info-container {
+  color: #fff4f6;
+  flex: 0 0 245px;
+  background: #ff1940;
+  padding: 25px 0;
+
+  .user-name {
+    font-size: 23px;
+    font-weight: 500;
+    padding: 0 25px;
+  }
+
+  .active-time-elapsed {
+    font-size: 14px;
+    padding: 0 25px;
+  }
+
+  .rooms-list-container {
+    margin-top: 35px;
+
+    .room {
+      padding: 15px 25px;
+      &.selected {
+        background: #800d20;
+      }
+      &:hover {
+        background: #800d20;
+        cursor: pointer;
+      }
+    }
+ }
+}

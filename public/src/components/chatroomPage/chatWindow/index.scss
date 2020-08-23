@@ -1,0 +1,106 @@
+.chat-window-container {
+  flex: 1;
+  position: relative;
+
+  .chat-name {
+    padding: 10px;
+    text-align: center;
+    font-size: 28px;
+    color: #6b6b6b;
+    font-weight: 400;
+  } 
+
+  .names-in-chat {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #6b6b6b;
+    border-bottom: 2px solid #d8d9da;
+  }
+
+  .messages-window {
+    background: #eff1f2;
+    position: absolute;
+    top: 105px;
+    right: 0px;
+    left: 0;
+    bottom: 80px;
+
+    .message-container {
+      display: flex;
+      margin: 0 20px;
+      flex-direction: column;
+      align-items: baseline;
+
+      &.current-user {
+        align-items: flex-end;
+
+        .message-bubble {
+          background: #ff1940;
+          color: #ffe4e9;
+          font-weight: 400;
+        }
+
+        .from-name {
+          display: none;
+        }
+      }
+
+      .message-bubble {
+        background: white;
+        max-width: 540px;
+        padding: 12px;
+        border-radius: 30px;
+        margin: 20px 0 7px;
+        color: #575757;
+        font-size: 14px;
+        font-weight: 500;
+
+        .message-text {
+          padding: 0 15px;
+        }
+      }
+      .from-name {
+        color: #868686;
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .send-message-container {
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    border-top: 2px solid #d8d9da;
+
+    form {
+      display: flex;
+
+      input[type="text"] {
+        border: 1px solid #a7a7a7;
+        padding: 10px 15px;
+        outline: none;
+        border-radius: 3px;
+        font-size: 15px;
+        color: #575757;
+        flex: 1;
+      }
+  
+      button {
+        flex: 0 0 90px;
+        margin-left: 14px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #609ee5;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}

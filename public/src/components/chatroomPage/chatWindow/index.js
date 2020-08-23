@@ -1,17 +1,20 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React from 'react';
 import Message from './message';
 import SendMessage from './sendMessage';
+import './index.scss';
 
 export default function ChatWindow(props) {
 
   let chatRoomUsernames = {};
   let renderChatRoomMessages = [];
   if (props.messagesForCurrentRoom !== null) {
-    props.messagesForCurrentRoom.map((data, k) => {
-      renderChatRoomMessages.push(<Message key={data.id} data={data} userName={props.userName} />)
+    renderChatRoomMessages = props.messagesForCurrentRoom.map(function (data, k) {
       if (!(data.name in chatRoomUsernames) && data.name !== props.userName) {
         chatRoomUsernames[data.name] = true;
       }
+      return (
+        <Message key={data.id} data={data} userName={props.userName} />
+      );
     })
   }
 

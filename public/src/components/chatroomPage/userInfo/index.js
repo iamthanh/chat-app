@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import './index.scss';
 
 export default function UserInfo(props) {
 

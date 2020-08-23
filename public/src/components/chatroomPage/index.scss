@@ -1,0 +1,8 @@
+.chatroom-page-container {
+  display: flex;
+  height: 100%;
+  
+  .chat-window-container {
+    flex: 1;
+  }
+}

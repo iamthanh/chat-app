@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 import LoginPage from './components/loginPage';
 import ChatroomPage from './components/chatroomPage';
+import './App.scss';
 
 function App() {
 
   const [userName, setUserName] = useState(null);
 
-  useEffect(() => {
-  }, [userName]);
+  // useEffect(() => {
+  // }, [userName]);
 
   return (
     <div className="App">
