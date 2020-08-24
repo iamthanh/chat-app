@@ -4,6 +4,10 @@
   background: #ff1940;
   padding: 25px 0;
 
+  @media only screen and (max-width: 480px) {
+    flex: 0 0 50px;
+  }
+
   .user-name {
     font-size: 23px;
     font-weight: 500;
@@ -13,6 +17,10 @@
   .active-time-elapsed {
     font-size: 14px;
     padding: 0 25px;
+
+    @media only screen and (max-width: 480px) {
+      display: none;
+    }
   }
 
   .rooms-list-container {
