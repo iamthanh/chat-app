@@ -7,9 +7,6 @@ function App() {
 
   const [userName, setUserName] = useState(null);
 
-  // useEffect(() => {
-  // }, [userName]);
-
   return (
     <div className="App">
       
@@ -23,6 +20,7 @@ function App() {
       {/* Once the username has been set, we can show the chatroom */}
       {userName && (
         <ChatroomPage 
+          startTime={Date.now()}
           userName={userName}
         />
       )}

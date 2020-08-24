@@ -16,7 +16,8 @@
   }
 
   .rooms-list-container {
-    margin-top: 35px;
+    margin-top: 28px;
+    overflow-y: auto;
 
     .room {
       padding: 15px 25px;
