@@ -16,7 +16,7 @@ export default function SendMessage(props) {
     });
     setNewMessageText('');
     
-    // This will call to update the view with the newly aded message
+    // This will call to update the view with the newly added message
     props.fetchMessagesForCurrentRoom();
   }
 
