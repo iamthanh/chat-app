@@ -1,4 +1,4 @@
-Hello there,
+### Hello there,
 
 Here's a really simple chat app which allows you to select chatrooms and send messages
 
